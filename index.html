@@ -4,22 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.min.css">
+    <title>CellMon</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header__hero">
-            <div class="header__city-select"></div>
-            <img src="./assets/logo.png" alt="CellMon" class="header__logo">
-            <div class="header__call">
-                <a href="tel:+73652885555">+7 (365) 288 55 55</a>
-                <button>Заказать звонок</button>
+    <div class="head-wrapper">
+        <header class="header">
+            <div class="container header__hero">
+                <div class="header__city-select">
+                    <img src="./assets/MapPin.svg" alt="Pin" class="header__map-pin">
+                    <p class="header__city">Выбрать город</p>
+                </div>
+                <img src="./assets/logo.png" alt="CellMon" class="header__logo">
+                <div class="header__call-wrapper">
+                    <a href="tel:+73652885555" class="header__call-link">+7 (365) <span>288 55 55</span></a>
+                    <button class="button gray-button header__btn">Заказать звонок</button>
+                </div>
+            </div>
+            <nav class="container menu">
+                <ul class="menu__list">
+                    <li class="menu__item">IP-телефония</li>
+                    <li class="menu__item">Видеонаблюдение</li>
+                    <li class="menu__item">Телевидение</li>
+                    <li class="menu__item">Клиенты</li>
+                    <li class="menu__item">Контакты</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container head-content">
+            <div class="head-content__text-wrapper">
+                <h1 class="head-content__title">Установка и настройка <br><span>IP-телефонии</span></h1>
+                <p class="head-content__text">
+                    IP-телефония, SIP-номера, карточки звонков, интеграции с CRM системами Bitrix24, SalesMan, RetailCRM, Мои Документы — и многое многое другое, что касается современной телефонии XXI века
+                </p>
+            </div>
+            <div class="form-wrapper">
+                <form class="form">
+                    <h3 class="form__title">Заполните форму и мы перезвоним вам</h3>
+                    <div class="input-wrapper">
+                        <img src="./assets/icons/user.svg" alt="User" class="input-logo">
+                        <input type="text" class="input form__input" placeholder="Ваше имя">
+                    </div>
+                    <div class="input-wrapper">
+                        <img src="./assets/icons/phone.svg" alt="User" class="input-logo">
+                        <input type="text" class="input form__input" placeholder="Ваш номер телефона">
+                    </div>
+                    <button type="submit" class="button primary-button form__btn">Заказать звонок</button>
+                    <div class="form__confirm">
+                        <input type="checkbox" checked name="confirm" class="checkbox form__checkbox">
+                        <p class="form__submit-text">
+                            Я принимаю условия обработки <a href="" class="form__link">персональных данных</a>
+                        </p>
+                    </div>
+                </form>
             </div>
         </div>
-        <nav class="menu">
-
-        </nav>
-    </header>
+    </div>
     <main>
 
     </main>
