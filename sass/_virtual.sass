@@ -1,0 +1,51 @@
+.virtual-atc
+    position: relative
+    &__design-rect
+        position: absolute
+        top: 0
+        right: 0
+        z-index: -1
+    &__title
+        margin: 0
+        margin-bottom: 30px
+        margin-top: 50px
+        color: $primary
+    &__hero
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        margin-bottom: 50px
+    &__text
+        margin: 0
+        margin-right: 40px
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 400
+        font-size: 23px
+        line-height: 187%
+        color: $text-color
+        flex-basis: 49%
+        align-self: center
+    &__figure
+        position: relative
+        margin: 0
+        flex-basis: 50%
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            width: 509px
+            height: 312px
+            background: #002B42
+            border-radius: 5px
+    &__img
+        position: relative
+        margin-top: 30px
+        margin-right: 30px
+        width: 560px
+        height: 373px
+        border-radius: 5px
+        z-index: 2
+    &__btn
+        margin: auto
