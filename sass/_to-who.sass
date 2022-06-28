@@ -1,0 +1,52 @@
+.who-needs
+    position: relative
+    background: url('../assets/difference-bg.png') no-repeat
+    background-size: 100% 100%
+    padding-top: 143px
+    padding-bottom: 50px
+    &__title
+        color: #fff
+        margin: 0
+        margin-bottom: 136px
+        & span
+            color: $primary
+    &__wrapper
+        display: flex
+        margin-bottom: 40px
+    &__item
+        position: relative
+        flex-basis: 50%
+        background: #fff
+        padding: 105px 20px 50px
+        &::before
+            content: ''
+            position: absolute
+            top: -117px
+            left: 25%
+            width: 291px
+            height: 233px
+            background: url('../assets/cross.png')
+        &:first-child
+            margin-right: 40px
+            &::before
+                background: url('../assets/check.png')
+    &__subtitle
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 700
+        font-size: 23px
+        line-height: 187%
+        margin: 0
+        margin-bottom: 5px
+        text-align: center
+    &__text
+        margin: 0
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 400
+        font-size: 23px
+        line-height: 187%
+        text-align: center
+        color: #3A3A3C
+    &__btn
+        margin: auto
