@@ -16,6 +16,7 @@ $text-color: #3A3A3C
     text-align: center
     letter-spacing: 0.05em
 .button
+    appearance: none
     cursor: pointer
     display: flex
     align-items: center
@@ -27,6 +28,7 @@ $text-color: #3A3A3C
     text-transform: uppercase
     line-height: 120%
     letter-spacing: 0.05em
+    transition: all 0.3s ease-in-out
 .gray-button
     border-radius: 70px
     padding: 20px 22px
@@ -35,17 +37,31 @@ $text-color: #3A3A3C
     box-shadow: 0px 6.13639px 16.3637px rgba(255, 255, 255, 0.7), inset 0px 2.72729px 7.50004px 3.40911px rgba(255, 255, 255, 0.4)
     font-size: 9px
     color: $text-color
+    &:hover
+        background: linear-gradient(359.95deg, #A6A6A6 0.05%, #D1D1D1 99.95%)
+        box-shadow: 0px 6.13639px 16.3637px rgba(255, 255, 255, 0.7), inset 0px 2.72729px 7.50004px 3.40911px rgba(255, 255, 255, 0.4)
+    &:active
+        box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.25)
+        background: linear-gradient(359.95deg, #A6A6A6 0.05%, #D1D1D1 99.95%)
 .primary-button
     text-transform: uppercase
     padding: 27px 44px
     width: 315px
-    background: linear-gradient(359.95deg, #E08600 0.05%, #FCB347 99.95%);
-    box-shadow: 0px 13.2316px 26px rgba(233, 133, 8, 0.5), inset 0px 5.88071px 16.172px 7.35089px rgba(255, 255, 255, 0.4);
+    background: linear-gradient(359.95deg, #E08600 0.05%, #FCB347 99.95%)
+    box-shadow: 0px 13.2316px 26px rgba(233, 133, 8, 0.5), inset 0px 5.88071px 16.172px 7.35089px rgba(255, 255, 255, 0.4)
     border-radius: 150px
     font-size: 15px
     color: #fff
+    &:hover
+        background: linear-gradient(359.95deg, #B94E00 0.05%, #FFA41E 99.95%)   
+        box-shadow: 0px 13.2316px 26px rgba(233, 133, 8, 0.5), inset 0px 5.88071px 16.172px 7.35089px rgba(255, 255, 255, 0.4)
+    &:active
+        background: linear-gradient(359.95deg, #B95900 0.05%, #FFA41E 99.95%)
+        box-shadow: none
 .input-wrapper
     position: relative
+    &:hover path
+        fill: #8F8F8F
 .input
     background: #EEEEEE
     border-radius: 150px
@@ -54,14 +70,49 @@ $text-color: #3A3A3C
     font-style: normal
     font-weight: 400
     padding: 22px 27px 24px 58px
+    border: 2px solid #EEEEEE
+    color: #D3D3D3
+    &::placeholder
+            color: #CCCCD8
+    &:hover
+        background: #D3D3D3
+        color: #8F8F8F
+        &::placeholder
+            color: #8F8F8F
+    &:focus
+        color: #8F8F8F
+        background: #EEEEEE
+        border: 2px solid #D3D3D3
+        outline: none
+        &::placeholder
+            color: #CCCCD8
 .input-logo
     position: absolute
     top: 18px
     left: 27px
 .checkbox
-    border-color: #C4C4C4
-    background: #C4C4C4
-    width: 18px
+    position: relative
+    appearance: none
+    background-color: #fff
+    margin: 0
+    font: inherit
+    color: #C4C4C4
+    width: 26px
     height: 18px
+    border: 2px solid #C4C4C4
+    background-color: #fff
+    cursor: pointer
+    border-radius: 2px
+    &.checked
+        border: none
+    &.checked::after
+        content: ''
+        position: absolute
+        top: -1px
+        bottom: 0px
+        left: 0px
+        right: -2px
+        background: url('../assets/icons/check.svg') no-repeat
+        z-index: 2
 .row-reverse
     flex-direction: row-reverse

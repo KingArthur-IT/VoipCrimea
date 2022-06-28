@@ -44,6 +44,9 @@
 }
 
 .button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,6 +64,8 @@
   text-transform: uppercase;
   line-height: 120%;
   letter-spacing: 0.05em;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .gray-button {
@@ -72,6 +77,18 @@
           box-shadow: 0px 6.13639px 16.3637px rgba(255, 255, 255, 0.7), inset 0px 2.72729px 7.50004px 3.40911px rgba(255, 255, 255, 0.4);
   font-size: 9px;
   color: #3A3A3C;
+}
+
+.gray-button:hover {
+  background: linear-gradient(359.95deg, #A6A6A6 0.05%, #D1D1D1 99.95%);
+  -webkit-box-shadow: 0px 6.13639px 16.3637px rgba(255, 255, 255, 0.7), inset 0px 2.72729px 7.50004px 3.40911px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 6.13639px 16.3637px rgba(255, 255, 255, 0.7), inset 0px 2.72729px 7.50004px 3.40911px rgba(255, 255, 255, 0.4);
+}
+
+.gray-button:active {
+  -webkit-box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0px 4px 5px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(359.95deg, #A6A6A6 0.05%, #D1D1D1 99.95%);
 }
 
 .primary-button {
@@ -86,8 +103,24 @@
   color: #fff;
 }
 
+.primary-button:hover {
+  background: linear-gradient(359.95deg, #B94E00 0.05%, #FFA41E 99.95%);
+  -webkit-box-shadow: 0px 13.2316px 26px rgba(233, 133, 8, 0.5), inset 0px 5.88071px 16.172px 7.35089px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 13.2316px 26px rgba(233, 133, 8, 0.5), inset 0px 5.88071px 16.172px 7.35089px rgba(255, 255, 255, 0.4);
+}
+
+.primary-button:active {
+  background: linear-gradient(359.95deg, #B95900 0.05%, #FFA41E 99.95%);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .input-wrapper {
   position: relative;
+}
+
+.input-wrapper:hover path {
+  fill: #8F8F8F;
 }
 
 .input {
@@ -98,6 +131,68 @@
   font-style: normal;
   font-weight: 400;
   padding: 22px 27px 24px 58px;
+  border: 2px solid #EEEEEE;
+  color: #D3D3D3;
+}
+
+.input::-webkit-input-placeholder {
+  color: #CCCCD8;
+}
+
+.input:-ms-input-placeholder {
+  color: #CCCCD8;
+}
+
+.input::-ms-input-placeholder {
+  color: #CCCCD8;
+}
+
+.input::placeholder {
+  color: #CCCCD8;
+}
+
+.input:hover {
+  background: #D3D3D3;
+  color: #8F8F8F;
+}
+
+.input:hover::-webkit-input-placeholder {
+  color: #8F8F8F;
+}
+
+.input:hover:-ms-input-placeholder {
+  color: #8F8F8F;
+}
+
+.input:hover::-ms-input-placeholder {
+  color: #8F8F8F;
+}
+
+.input:hover::placeholder {
+  color: #8F8F8F;
+}
+
+.input:focus {
+  color: #8F8F8F;
+  background: #EEEEEE;
+  border: 2px solid #D3D3D3;
+  outline: none;
+}
+
+.input:focus::-webkit-input-placeholder {
+  color: #CCCCD8;
+}
+
+.input:focus:-ms-input-placeholder {
+  color: #CCCCD8;
+}
+
+.input:focus::-ms-input-placeholder {
+  color: #CCCCD8;
+}
+
+.input:focus::placeholder {
+  color: #CCCCD8;
 }
 
 .input-logo {
@@ -107,10 +202,35 @@
 }
 
 .checkbox {
-  border-color: #C4C4C4;
-  background: #C4C4C4;
-  width: 18px;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: #C4C4C4;
+  width: 26px;
   height: 18px;
+  border: 2px solid #C4C4C4;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.checkbox.checked {
+  border: none;
+}
+
+.checkbox.checked::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  bottom: 0px;
+  left: 0px;
+  right: -2px;
+  background: url("../assets/icons/check.svg") no-repeat;
+  z-index: 2;
 }
 
 .row-reverse {
@@ -362,6 +482,10 @@
   margin-right: 20px;
 }
 
+.form__checkbox.checked {
+  margin-right: 22px;
+}
+
 .form__submit-text {
   font-family: 'Museo Sans 500 Medium';
   font-size: 14px;
@@ -371,6 +495,13 @@
 
 .form__link {
   color: #4990D1;
+}
+
+.form__close {
+  position: absolute;
+  cursor: pointer;
+  top: 7px;
+  right: 7px;
 }
 
 .virtual-atc {
@@ -903,4 +1034,29 @@
 
 .align-right {
   text-align: right;
+}
+
+.popup {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(108, 108, 108, 0.8);
+  top: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.popup-visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
