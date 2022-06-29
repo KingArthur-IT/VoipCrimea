@@ -2,8 +2,8 @@
     position: relative
     background: url('../assets/difference-bg.png') no-repeat
     background-size: 100% 100%
-    padding-top: 143px
-    margin-top: -40px
+    padding-top: 180px
+    margin-top: -80px
     &__title
         max-width: 1072px
         color: #fff
@@ -18,10 +18,6 @@
         list-style: none
         flex-wrap: wrap
     &__item
-        font-family: 'Montserrat'
-        font-style: normal
-        font-weight: 400
-        font-size: 23px
         line-height: 150%
         text-align: center
         color: #3A3A3C
@@ -38,3 +34,38 @@
             margin-right: 0
         &:nth-child(6)
             margin-right: 0
+@media screen and (max-width: 1175px)
+    .differences
+        &__item
+            flex-basis: 47%
+            &:nth-child(3)
+                margin-right: 40px
+            &:nth-child(even)
+                margin-right: 0
+
+@media screen and (max-width: 750px)
+    .differences
+        background: url('../assets/difference-mob-bg.png') no-repeat
+        background-size: 100% 100%
+        padding-top: 80px
+        margin-top: -40px
+        &__item
+            flex-basis: 46%
+@media screen and (max-width: 600px)
+    .differences
+        &__item
+            flex-basis: 100%
+            margin-right: 0
+            min-height: 130px
+            margin-bottom: 30px
+            &:nth-child(3)
+                margin-right: 0
+        &__title
+            margin-bottom: 30px
+@media screen and (max-width: 375px)
+    .differences
+         margin-top: -30px
+        &__item
+            margin-bottom: 20px
+        &__title
+            margin-bottom: 20px
