@@ -63,7 +63,11 @@
 @media screen and (max-width: 460px)
     .form-wrapper
         height: auto
+        &:before
+            width: 90%
     .form
+        width: 100%
+        height: auto
         &__title
             font-size: 18px
         &__input
@@ -77,3 +81,8 @@
             font-size: 12px
         &__confirm
             padding: 0 16px
+    #popup-form
+        margin: 10px
+@media screen and (max-width: 375px)
+    .form
+        padding: 20px 20px 17px
