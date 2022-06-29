@@ -909,6 +909,9 @@
 }
 
 @media screen and (max-width: 375px) {
+  .differences {
+    margin-top: -30px;
+  }
   .differences__item {
     margin-bottom: 20px;
   }
@@ -936,14 +939,42 @@
 }
 
 .tracking__text {
-  width: 661px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 23px;
+  max-width: 661px;
   line-height: 187%;
   color: #FFFFFF;
   margin-bottom: 30px;
+}
+
+.tracking__text:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 1240px) {
+  .tracking {
+    background-size: 1200px 100%;
+    background-position-x: 50%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .tracking {
+    min-height: 0;
+    padding-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tracking {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .tracking__title {
+    text-align: center;
+  }
+  .tracking__text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
 
 .call-center {
