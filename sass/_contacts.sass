@@ -17,19 +17,18 @@
         display: flex
         justify-content: space-between
     &__adress-wrapper
-        font-family: 'Montserrat'
-        font-style: normal
-        font-size: 23px
         line-height: 187%
         color: #FFFFFF
         max-width: 600px
     &__adress
+        line-height: 187%
         font-weight: 700
     &__list
         list-style: none
         padding: 0
         margin: 0
     &__item
+        line-height: 187%
         position: relative
         padding: 0
         margin: 0
@@ -48,4 +47,27 @@
     &__link
         text-decoration: none
         color: #fff
-        
+@media screen and (max-width: 860px)
+    .contacts
+        padding-bottom: 50px
+        &__map
+            width: 100%
+            margin-bottom: 30px
+        &__title
+            margin-bottom: 30px
+        &__hero
+            flex-direction: column
+        &__item
+            margin-bottom: 30px
+        &__adress-wrapper
+            margin-bottom: 30px
+        &__form
+            margin: auto
+@media screen and (max-width: 460px)
+    .contacts
+        &__form
+            &.form-wrapper::before
+                width: 90%
+            & .form
+                width: 100%
+                height: auto
