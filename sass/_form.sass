@@ -58,7 +58,11 @@
         cursor: pointer
         top: 7px
         right: 7px
-
+        transition: all 0.3s ease-in-out
+        &:hover 
+            transform: rotate(90deg)
+            & rect
+                fill: $primary
 
 @media screen and (max-width: 460px)
     .form-wrapper

@@ -32,7 +32,9 @@
 }
 
 .section {
+  position: relative;
   width: 100%;
+  z-index: 2;
 }
 
 .title {
@@ -54,6 +56,7 @@
 }
 
 .button {
+  position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -76,6 +79,7 @@
   letter-spacing: 0.05em;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  z-index: 5;
 }
 
 .gray-button {
@@ -250,6 +254,10 @@
           flex-direction: row-reverse;
 }
 
+.error ~ .input-logo path {
+  fill: #f03d3d;
+}
+
 @media screen and (max-width: 1020px) {
   .title {
     font-size: 60px;
@@ -328,6 +336,7 @@
 }
 
 .header__city-select {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,6 +365,12 @@
   outline: none;
 }
 
+.header__mob-city {
+  display: none;
+  position: absolute;
+  right: 32px;
+}
+
 .header__city-list {
   opacity: 0;
   margin: 0;
@@ -369,8 +384,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  top: 50px;
-  left: 75px;
+  top: 0;
+  left: 30px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   pointer-events: none;
@@ -425,7 +440,7 @@
 
 .select-show {
   opacity: 1;
-  top: 70px;
+  top: 40px;
   pointer-events: all;
 }
 
@@ -452,6 +467,10 @@
   .header__city {
     display: none;
   }
+  .header__mob-city {
+    display: block;
+    font-size: 14px;
+  }
   .header__city-select {
     -ms-flex-preferred-size: 5% !important;
         flex-basis: 5% !important;
@@ -461,6 +480,10 @@
   }
   .header__burger {
     display: block;
+  }
+  .header__city-list {
+    right: 0px;
+    left: auto;
   }
 }
 
@@ -730,6 +753,17 @@
   cursor: pointer;
   top: 7px;
   right: 7px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.form__close:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.form__close:hover rect {
+  fill: #FFA928;
 }
 
 @media screen and (max-width: 460px) {
@@ -782,6 +816,7 @@
   position: relative;
   overflow: hidden;
   padding-bottom: 40px;
+  z-index: 5;
 }
 
 .virtual-atc__design-rect {
@@ -1527,6 +1562,8 @@
 }
 
 .contacts__adress {
+  margin: 0;
+  margin-bottom: 40px;
   line-height: 187%;
   font-weight: 700;
 }
