@@ -13,6 +13,9 @@
         margin: auto
         margin-bottom: 80px
         background: #fff
+        & iframe
+            width: 100%
+            height: 100%
     &__hero
         display: flex
         justify-content: space-between
@@ -63,11 +66,29 @@
             margin-bottom: 30px
         &__form
             margin: auto
-// @media screen and (max-width: 460px)
-//     .contacts
-//         &__form
-//             &.form-wrapper::before
-//                 width: 90%
-//             & .form
-//                 width: 100%
-//                 height: auto
+
+@media screen and (max-width: 1020px)
+    .contacts
+        &__item
+            &::before
+                top: 18px
+@media screen and (max-width: 980px)
+    .contacts
+        &__item
+            &::before
+                top: 16px
+@media screen and (max-width: 600px)
+    .contacts
+        &__item
+            &::before
+                top: 14px
+@media screen and (max-width: 480px)
+    .contacts
+        &__item
+            &::before
+                top: 12px
+@media screen and (max-width: 400px)
+    .contacts
+        &__item
+            &::before
+                top: 10px

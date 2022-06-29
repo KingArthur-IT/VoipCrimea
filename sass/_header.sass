@@ -17,16 +17,38 @@
         align-items: center
         cursor: pointer
         flex-basis: 35%
-    &__map-pin
-        width: 32px
-        height: 32px
-    &__city
         font-family: 'Montserrat'
         font-style: normal
         font-weight: 400
         font-size: 20px
         line-height: 120%
         color: $text-color
+    &__map-pin
+        width: 32px
+        height: 32px
+    &__city
+        margin: 0
+        border: none
+        outline: none
+    &__city-list
+        opacity: 0
+        margin: 0
+        padding: 0
+        list-style: none
+        display: flex
+        flex-direction: column
+        position: absolute
+        top: 50px
+        left: 75px
+        transition: all 0.3s ease-in-out
+        pointer-events: none
+    &__city-item
+        padding: 12px
+        background: #fff
+        min-width: 170px
+        &:hover
+            background: $primary
+            color: #fff
     &__logo
         width: 186px
         height: 80px
@@ -50,6 +72,11 @@
     &__burger
         display: none
         cursor: pointer
+.select-show
+    opacity: 1
+    top: 70px
+    pointer-events: all
+
 @media screen and (max-width: 1020px)
     .header
         &__call-link

@@ -1,6 +1,5 @@
 .menu
     width: 960px
-    padding: 13px 0 15px
     background: $primary
     border-radius: 60px
     &__list
@@ -21,8 +20,16 @@
         font-size: 17px
         line-height: 120%
         color: #FFFFFF
+        padding: 13px 20px 15px
+        background: $primary
+        transition: all 0.3s ease-in-out
         &:last-child
             margin-right: 0
+    &__link
+        text-decoration: none
+        color: #FFFFFF
+        &:hover .menu__item
+            color: #012b42
 @media screen and (max-width: 1020px)
     .menu
         width: 820px
