@@ -1158,11 +1158,15 @@
 .who-needs__item::before {
   content: '';
   position: absolute;
-  top: -117px;
-  left: 25%;
-  width: 291px;
-  height: 233px;
-  background: url("../assets/cross.png");
+  top: 0%;
+  left: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  width: 50%;
+  height: 30%;
+  background: url("../assets/cross.png") no-repeat;
+  background-size: contain;
+  max-height: 200px;
 }
 
 .who-needs__item:first-child {
@@ -1170,14 +1174,12 @@
 }
 
 .who-needs__item:first-child::before {
-  background: url("../assets/check.png");
+  background: url("../assets/check.png") no-repeat;
+  background-size: contain;
 }
 
 .who-needs__subtitle {
-  font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 700;
-  font-size: 23px;
   line-height: 187%;
   margin: 0;
   margin-bottom: 5px;
@@ -1186,10 +1188,6 @@
 
 .who-needs__text {
   margin: 0;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 23px;
   line-height: 187%;
   text-align: center;
   color: #3A3A3C;
@@ -1197,6 +1195,74 @@
 
 .who-needs__btn {
   margin: auto;
+}
+
+@media screen and (max-width: 1020px) {
+  .who-needs__item {
+    padding: 90px 20px 50px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .who-needs__title {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .who-needs__item {
+    padding: 80px 20px 50px;
+  }
+  .who-needs__item::before {
+    max-height: 170px;
+    top: -70px;
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .who-needs {
+    padding-top: 100px;
+    background: url("../assets/difference-mob-bg.png") no-repeat;
+    background-size: contain;
+    background-size: 100% 100%;
+  }
+  .who-needs__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .who-needs__item {
+    margin-bottom: 95px;
+  }
+  .who-needs__item:first-child {
+    margin-right: 0px;
+  }
+  .who-needs__item:last-child {
+    margin-bottom: 0;
+  }
+  .who-needs__item::before {
+    height: 175px;
+    width: 175px;
+    left: 50%;
+    top: 15px;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .who-needs__item {
+    padding-top: 66px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .who-needs__btn {
+    width: 100%;
+  }
 }
 
 .equipment {
