@@ -1,6 +1,6 @@
 .head-wrapper
     width: 100%
-    height: 700px
+    //height: 700px
     background: url('../assets/header-bg.png') no-repeat
 .header
     width: 100%
@@ -16,6 +16,7 @@
         display: flex
         align-items: center
         cursor: pointer
+        flex-basis: 35%
     &__map-pin
         width: 32px
         height: 32px
@@ -46,4 +47,31 @@
             font-weight: 500
             font-size: 24px
     &__btn
-        
+    &__burger
+        display: none
+        cursor: pointer
+@media screen and (max-width: 1020px)
+    .header
+        &__call-link
+            display: none
+        &__city-select
+            flex-basis: 25% !important
+@media screen and (max-width: 860px)
+    .header
+        padding-bottom: 8px
+        &__hero
+            flex-direction: row-reverse
+        &__city
+            display: none
+        &__city-select
+            flex-basis: 5% !important
+        &__btn
+            display: none
+        &__burger
+            display: block
+@media screen and (max-width: 480px)
+    .header
+        padding-top: 20px
+        &__logo
+            width: 84px
+            height: 36px
