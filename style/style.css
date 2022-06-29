@@ -1167,6 +1167,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .footer__item {
@@ -1180,6 +1181,7 @@
 }
 
 .footer__title {
+  margin: 0;
   font-family: 'Druk Cyr';
   font-style: normal;
   font-weight: 700;
@@ -1187,6 +1189,10 @@
   line-height: 257%;
   letter-spacing: 0.05em;
   color: #FFFFFF;
+}
+
+.footer__text {
+  margin: 0;
 }
 
 .footer__link {
@@ -1201,13 +1207,97 @@
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 233%;
+  line-height: 130%;
   color: #FFFFFF;
   text-align: center;
 }
 
 .align-right {
   text-align: right;
+}
+
+@media screen and (max-width: 1020px) {
+  .footer__title {
+    font-size: 28px;
+  }
+  .footer__item {
+    font-size: 20px;
+  }
+  .footer__copyright {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .footer__title {
+    font-size: 24px;
+  }
+  .footer__item {
+    font-size: 18px;
+  }
+  .footer__hero {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .footer__hero {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 0px;
+  }
+  .footer__title {
+    text-align: center;
+  }
+  .footer__item {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .footer__copyright {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer__title {
+    font-size: 22px;
+  }
+  .footer__item {
+    font-size: 16px;
+  }
+  .footer__copyright {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__title {
+    font-size: 18px;
+  }
+  .footer__item {
+    font-size: 14px;
+  }
+  .footer__copyright {
+    max-width: 315px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer__title {
+    font-size: 15px;
+  }
+  .footer__item {
+    font-size: 12px;
+  }
+  .footer__copyright {
+    font-size: 10px;
+    max-width: 270px;
+  }
 }
 
 .popup {
