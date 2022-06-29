@@ -1,5 +1,6 @@
 .equipment
-    padding: 50px 0
+    padding-top: 50px
+    padding-bottom: 50px
     &__title
         margin: 0
         margin-bottom: 30px
@@ -22,6 +23,7 @@
             margin-bottom: 0
     &__img
         width: 375px
+        margin-right: 20px
     &__text-wrapper
         max-width: 720px
         font-family: 'Montserrat'
@@ -33,6 +35,32 @@
         margin: 0
         margin-bottom: 20px
         font-weight: 700
+        line-height: 187%
     &__text
         font-weight: 400
         padding-left: 30px
+        line-height: 187%
+.row-reverse .equipment__img
+    margin-right: 0
+    margin-left: 20px
+
+@media screen and (max-width: 1020px)
+    .equipment
+        &__curve
+            display: none
+@media screen and (max-width: 860px)
+    .equipment
+        &__item
+            flex-direction: column-reverse
+        &__text
+            padding-left: 0px
+            text-align: center
+        &__name
+            text-align: center
+        &__img
+            margin: auto
+            width: 80%
+        &__text-wrapper
+            max-width: none
+    .row-reverse .equipment__img
+        margin: auto
