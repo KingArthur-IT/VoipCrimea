@@ -9,7 +9,11 @@
     justify-content: center
     align-items: center
     display: none
+    opacity: 0
+    transition: opacity 0.3s ease-in-out
 .popup-visible
+    opacity: 1 !important
+.popup-show
     display: flex !important
 
 @media screen and (max-width: 460px)

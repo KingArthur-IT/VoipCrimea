@@ -96,6 +96,8 @@
           box-shadow: 0px 6.13639px 16.3637px rgba(255, 255, 255, 0.7), inset 0px 2.72729px 7.50004px 3.40911px rgba(255, 255, 255, 0.4);
   font-size: 9px;
   color: #3A3A3C;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .gray-button:hover {
@@ -120,6 +122,8 @@
   border-radius: 150px;
   font-size: 15px;
   color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .primary-button:hover {
@@ -152,6 +156,8 @@
   padding: 22px 27px 24px 58px;
   border: 2px solid #EEEEEE;
   color: #D3D3D3;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .input::-webkit-input-placeholder {
@@ -218,6 +224,11 @@
   position: absolute;
   top: 18px;
   left: 27px;
+}
+
+.input-logo path {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .checkbox {
@@ -456,6 +467,13 @@
 
 .burger-hide {
   display: none !important;
+}
+
+@media screen and (max-width: 1900px) {
+  .head-wrapper {
+    background-size: auto auto;
+    background-position-x: center;
+  }
 }
 
 @media screen and (max-width: 1020px) {
@@ -1871,9 +1889,16 @@
       -ms-flex-align: center;
           align-items: center;
   display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .popup-visible {
+  opacity: 1 !important;
+}
+
+.popup-show {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -1902,6 +1927,9 @@
       -ms-flex-align: center;
           align-items: center;
   display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .thanks-popup__content {

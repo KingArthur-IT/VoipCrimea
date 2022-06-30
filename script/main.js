@@ -1,3 +1,16 @@
+function showPopup(popupClassName){
+    document.getElementsByClassName(popupClassName)[0].classList.add('popup-show');
+        setTimeout(() => {
+            document.getElementsByClassName(popupClassName)[0].classList.add('popup-visible');
+        }, 100);
+}
+function closePopup(popupClassName){
+    document.getElementsByClassName(popupClassName)[0].classList.remove('popup-visible');
+    setTimeout(() => {
+        document.getElementsByClassName(popupClassName)[0].classList.remove('popup-show');
+    }, 300);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     //checkbox
     [...document.getElementsByClassName('checkbox')].forEach((el) => {
@@ -7,36 +20,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     //popup
-    [...document.getElementsByClassName('call-popup')].forEach((el) => {
-        el.addEventListener('click', () => {
-            document.getElementsByClassName('popup')[0].classList.add('popup-visible');
-        });
-    });
+    [...document.getElementsByClassName('call-popup')].forEach((el) => { 
+        el.addEventListener('click', () => { showPopup('popup'); })
+     });
 
-    document.getElementsByClassName('form__close')[0].addEventListener('click', () => {
-        document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
-    });
+    document.getElementsByClassName('form__close')[0].addEventListener('click', () => { closePopup('popup'); });
+    document.getElementsByClassName('popup')[0].addEventListener('click', () => { closePopup('popup'); });
+    document.getElementById('popup-form').addEventListener('click', (e) => { e.stopPropagation(); });
 
-    document.getElementsByClassName('popup')[0].addEventListener('click', () => {
-        document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
-    });
-
-    document.getElementById('popup-form').addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    //thanks
-    document.getElementsByClassName('thanks-popup__close')[0].addEventListener('click', () => {
-        document.getElementsByClassName('thanks-popup')[0].classList.remove('popup-visible');
-    });
-
-    document.getElementsByClassName('thanks-popup')[0].addEventListener('click', () => {
-        document.getElementsByClassName('thanks-popup')[0].classList.remove('popup-visible');
-    });
-
-    document.getElementsByClassName('thanks-popup__content')[0].addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
+    //thanks popup
+    document.getElementsByClassName('thanks-popup__close')[0].addEventListener('click', () => { closePopup('thanks-popup'); });
+    document.getElementsByClassName('thanks-popup')[0].addEventListener('click', () => { closePopup('thanks-popup'); });
+    document.getElementsByClassName('thanks-popup__content')[0].addEventListener('click', (e) => { e.stopPropagation(); });
 
     //select
     document.getElementById('city-select').addEventListener('click', (e) => {
@@ -101,10 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 isValid = false;
             };
 
-            console.log(isValid)
             if (!isValid) return;
-            document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
-            document.getElementsByClassName('thanks-popup')[0].classList.add('popup-visible');
+            closePopup('popup');
+            showPopup('thanks-popup');
         })
     });
 
