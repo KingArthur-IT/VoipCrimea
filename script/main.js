@@ -10,6 +10,16 @@ function closePopup(popupClassName){
         document.getElementsByClassName(popupClassName)[0].classList.remove('popup-show');
     }, 300);
 }
+async function postData(url = '', data = {}) {
+    return await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  }
 
 document.addEventListener('DOMContentLoaded', () => {
     //checkbox
@@ -83,22 +93,30 @@ document.addEventListener('DOMContentLoaded', () => {
     ['contacts', 'head-content', 'popup'].forEach((form) => {
         document.getElementsByClassName(`${form}__submit`)[0].addEventListener('click', (e) => {
             e.preventDefault();
+            const name = document.getElementsByClassName(`${form}__name`)[0].value;
+            const phone = document.getElementsByClassName(`${form}__tel`)[0].value;
+
             document.getElementsByClassName(`${form}__name`)[0].classList.remove('error');
             document.getElementsByClassName(`${form}__tel`)[0].classList.remove('error');
 
             let isValid = true;
-            if (document.getElementsByClassName(`${form}__name`)[0].value.length < 3){
+            if (name.length < 3){
                 document.getElementsByClassName(`${form}__name`)[0].classList.add('error');
                 isValid = false;
             };
-            if (document.getElementsByClassName(`${form}__tel`)[0].value.includes('_') || document.getElementsByClassName(`${form}__tel`)[0].value.length === 0){
+            if (phone.includes('_') || phone.length === 0){
                 document.getElementsByClassName(`${form}__tel`)[0].classList.add('error');
                 isValid = false;
             };
 
             if (!isValid) return;
             closePopup('popup');
-            showPopup('thanks-popup');
+            
+            postData('http://k095pa95.ru/getnumbers/webhook.php', { name: name, phone: phone })
+                .then((data) => {
+                    showPopup('thanks-popup');
+                    console.log(data);
+                });
         })
     });
 
