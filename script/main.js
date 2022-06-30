@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     //checkbox
     [...document.getElementsByClassName('checkbox')].forEach((el) => {
         el.addEventListener('click', () => {
@@ -128,5 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         })
     });
+
+
+    //mobile menu
+    document.getElementsByClassName('header__burger')[0].addEventListener('click', () => {
+        document.getElementsByClassName('mobile-menu')[0].classList.toggle('mobile-menu-visible');
+        document.getElementsByClassName('body')[0].classList.toggle('overflow-hidden');
+    });
+    
+    [...document.getElementsByClassName('mobile-menu__link')].forEach((el) => {
+        el.addEventListener('click', () => {
+            document.getElementsByClassName('mobile-menu')[0].classList.remove('mobile-menu-visible');
+            document.getElementsByClassName('body')[0].classList.remove('overflow-hidden');
+        })
+    })
  
 });
