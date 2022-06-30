@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,28 +27,32 @@
                         <line y1="6.5" x2="25" y2="6.5" stroke="#0071AE"/>
                         <line y1="12.5" x2="25" y2="12.5" stroke="#0071AE"/>
                     </svg>
+                    <svg class="header__burger burger-hide" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="1.01469" y1="0.807579" x2="18.6924" y2="18.4852" stroke="#0071AE" stroke-opacity="0.8"/>
+                        <line x1="0.646447" y1="18.3241" x2="18.3241" y2="0.64639" stroke="#0071AE" stroke-opacity="0.8"/>
+                    </svg>                        
                     <a href="tel:+73652885555" class="header__call-link">+7 (365) <span>288 55 55</span></a>
                     <button class="call-popup button gray-button header__btn">Заказать звонок</button>
                 </div>
             </div>
             <nav class="container menu">
-                <ul class="menu__list">
+                <div class="menu__list">
                     <a href="#virtual-section" class="menu__link">
-                        <li class="menu__item">Виртуальные АТС</li>
+                        <div class="menu__item">Виртуальные АТС</div>
                     </a>
                     <a href="#call-center-section" class="menu__link">
-                        <li class="menu__item">Колл-центр</li>
+                        <div class="menu__item">Колл-центр</div>
                     </a>
                     <a href="#crm-section" class="menu__link">
-                        <li class="menu__item">CRM системы</li>
+                        <div class="menu__item">CRM системы</div>
                     </a>
                     <a href="#equipment-section" class="menu__link">
-                        <li class="menu__item">Оборудование</li>
+                        <div class="menu__item">Оборудование</div>
                     </a>
                     <a href="#contacts-section" class="menu__link">
-                        <li class="menu__item">Контакты</li>
+                        <div class="menu__item">Контакты</div>
                     </a>
-                </ul>
+                </div>
             </nav>
         </header>
         <div class="container head-content">
@@ -97,7 +101,7 @@
                         на сервере компании, которая предоставляет телефонию и вся работа ведется в облаке. Пользователи подключаются к системе по интернету, мобильным или локальным сетям
                     </p>
                     <figure class="virtual-atc__figure">
-                        <img src="./assets/virtual-design.png" class="virtual-atc__design-rect">
+                        <img src="./assets/virtual-design.png" class="virtual-atc__design-rect" alt="design">
                         <img src="./assets/virtual.png" alt="VirtualATC" class="virtual-atc__img">
                     </figure>
                 </div>
@@ -151,7 +155,7 @@
                 <div class="call-center__hero">
                     <button class="call-popup button primary-button call-center__mob-btn">узнать подробнее</button>
                     <figure class="call-center__figure">
-                        <img src="./assets/call-center-design.png" class="call-center__design-rect">
+                        <img src="./assets/call-center-design.png" class="call-center__design-rect" alt="design">
                         <img src="./assets/call-center.png" alt="call-center" class="call-center__img">
                     </figure>
                     <div class="call-center__content">
@@ -193,7 +197,7 @@
         <section id="equipment-section" class="section container equipment">
             <h3 class="title equipment__title">Оборудование для <span>IP-телефонии</span></h3>
             <div class="equipment__list">
-                <img src="./assets/equipment-curve.svg" class="equipment__curve">
+                <img src="./assets/equipment-curve.svg" class="equipment__curve" alt="design">
                 <div class="equipment__item">
                     <img src="./assets/equipment-1.png" alt="equipment" class="equipment__img">
                     <div class="equipment__text-wrapper">
@@ -349,23 +353,23 @@
         </div>
     </div>
     <div class="mobile-menu">
-        <ul class="mobile-menu__list">
+        <div class="mobile-menu__list">
             <a href="#virtual-section" class="mobile-menu__link">
-                <li class="mobile-menu__item">Виртуальные АТС</li>
+                <div class="mobile-menu__item">Виртуальные АТС</div>
             </a>
             <a href="#call-center-section" class="mobile-menu__link">
-                <li class="mobile-menu__item">Колл-центр</li>
+                <div class="mobile-menu__item">Колл-центр</div>
             </a>
             <a href="#crm-section" class="mobile-menu__link">
-                <li class="mobile-menu__item">CRM системы</li>
+                <div class="mobile-menu__item">CRM системы</div>
             </a>
             <a href="#equipment-section" class="mobile-menu__link">
-                <li class="mobile-menu__item">Оборудование</li>
+                <div class="mobile-menu__item">Оборудование</div>
             </a>
             <a href="#contacts-section" class="mobile-menu__link">
-                <li class="mobile-menu__item">Контакты</li>
+                <div class="mobile-menu__item">Контакты</div>
             </a>
-        </ul>
+        </div>
     </div>
     <script src="./script/main.js"></script>
 </body>

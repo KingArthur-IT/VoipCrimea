@@ -454,6 +454,10 @@
   pointer-events: all;
 }
 
+.burger-hide {
+  display: none !important;
+}
+
 @media screen and (max-width: 1020px) {
   .header__call-link {
     display: none;
