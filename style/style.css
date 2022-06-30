@@ -320,7 +320,7 @@
 
 .head-wrapper {
   width: 100%;
-  background: url("../assets/header-bg.png") no-repeat;
+  background: url("../assets/header-bg.webp") no-repeat;
   background-size: 100% 100%;
 }
 
@@ -974,7 +974,7 @@
 
 .differences {
   position: relative;
-  background: url("../assets/difference-bg.png") no-repeat;
+  background: url("../assets/difference-bg.webp") no-repeat;
   background-size: 100% 100%;
   padding-top: 180px;
   margin-top: -80px;
@@ -1047,7 +1047,7 @@
 
 @media screen and (max-width: 750px) {
   .differences {
-    background: url("../assets/difference-mob-bg.png") no-repeat;
+    background: url("../assets/difference-mob-bg.webp") no-repeat;
     background-size: 100% 100%;
     padding-top: 80px;
     margin-top: -40px;
@@ -1088,7 +1088,7 @@
 
 .tracking {
   min-height: 900px;
-  background: url("../assets/tracking.png") no-repeat;
+  background: url("../assets/tracking.webp") no-repeat;
   background-size: 100% 100%;
   padding-top: 100px;
 }
@@ -1289,7 +1289,7 @@
 
 .who-needs {
   position: relative;
-  background: url("../assets/difference-bg.png") no-repeat;
+  background: url("../assets/difference-bg.webp") no-repeat;
   background-size: 100% 100%;
   padding-top: 143px;
   padding-bottom: 50px;
@@ -1330,7 +1330,7 @@
           transform: translate(50%, -50%);
   width: 50%;
   height: 30%;
-  background: url("../assets/cross.png") no-repeat;
+  background: url("../assets/cross.webp") no-repeat;
   background-size: contain;
   max-height: 200px;
 }
@@ -1340,7 +1340,7 @@
 }
 
 .who-needs__item:first-child::before {
-  background: url("../assets/check.png") no-repeat;
+  background: url("../assets/check.webp") no-repeat;
   background-size: contain;
 }
 
@@ -1390,7 +1390,7 @@
 @media screen and (max-width: 790px) {
   .who-needs {
     padding-top: 100px;
-    background: url("../assets/difference-mob-bg.png") no-repeat;
+    background: url("../assets/difference-mob-bg.webp") no-repeat;
     background-size: contain;
     background-size: 100% 100%;
   }
