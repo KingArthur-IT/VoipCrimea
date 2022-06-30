@@ -552,6 +552,9 @@
   .menu {
     width: 820px;
   }
+  .menu__item {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 860px) {
@@ -1829,13 +1832,83 @@
 }
 
 .popup-visible {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 @media screen and (max-width: 460px) {
   .popup {
+    width: auto;
+  }
+}
+
+.thanks-popup {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: rgba(108, 108, 108, 0.8);
+  top: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.thanks-popup__content {
+  position: relative;
+  width: 372px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  padding: 40px 30px;
+  z-index: 2;
+}
+
+.thanks-popup__close {
+  position: absolute;
+  cursor: pointer;
+  top: 7px;
+  right: 7px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.thanks-popup__close:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.thanks-popup__close:hover rect {
+  fill: #FFA928;
+}
+
+.thanks-popup__text {
+  margin: 0;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #002B42;
+}
+
+.thanks-popup__text span {
+  color: #FFA928;
+}
+
+@media screen and (max-width: 460px) {
+  .thanks-popup {
     width: auto;
   }
 }

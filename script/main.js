@@ -1,120 +1,132 @@
-//checkbox
-[...document.getElementsByClassName('checkbox')].forEach((el) => {
-    el.addEventListener('click', () => {
-        el.classList.toggle('checked')
-    })
-});
-
-//popup
-[...document.getElementsByClassName('call-popup')].forEach((el) => {
-    el.addEventListener('click', () => {
-        document.getElementsByClassName('popup')[0].classList.add('popup-visible');
-    });
-});
-
-document.getElementsByClassName('form__close')[0].addEventListener('click', () => {
-    document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
-});
-
-document.getElementsByClassName('popup')[0].addEventListener('click', () => {
-    document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
-});
-
-document.getElementById('popup-form').addEventListener('click', (e) => {
-    e.stopPropagation();
-});
-
-//select
-document.getElementById('city-select').addEventListener('click', (e) => {
-    document.getElementsByClassName('header__city-list')[0].classList.toggle('select-show');
-    e.stopPropagation();
-});
-
-[...document.getElementsByClassName('header__city-item')].forEach( (el) => {
-    el.addEventListener('click', () => {
-        document.getElementsByClassName('header__city')[0].textContent = el.textContent;
-        document.getElementsByClassName('header__mob-city')[0].textContent = el.textContent;
-    })
-});
-
-document.getElementsByTagName('body')[0].addEventListener('click', () => {
-    document.getElementsByClassName('header__city-list')[0].classList.remove('select-show');
-});
-
-//input
-for (const el of document.querySelectorAll("[data-placeholder][data-slots]")) {
-    const pattern = el.getAttribute("data-placeholder"),
-        slots = new Set(el.dataset.slots || "_"),
-        prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
-        first = [...pattern].findIndex(c => slots.has(c)),
-        accept = new RegExp(el.dataset.accept || "\\d", "g"),
-        clean = input => {
-            input = input.match(accept) || [];
-            return Array.from(pattern, c =>
-                input[0] === c || slots.has(c) ? input.shift() || c : c
-            );
-        },
-        format = () => {
-            const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
-                i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
-                return i<0? prev[prev.length-1]: back? prev[i-1] || first: i;
-            });
-            el.value = clean(el.value).join``;
-            el.setSelectionRange(i, j);
-            back = false;
-        };
-    let back = false;
-    el.addEventListener("keydown", (e) => back = e.key === "Backspace");
-    el.addEventListener("input", format);
-    el.addEventListener("focus", format);
-    el.addEventListener("blur", () => el.value === pattern && (el.value=""));
-};
-
-//submit
-['contacts', 'head-content', 'popup'].forEach((form) => {
-    document.getElementsByClassName(`${form}__submit`)[0].addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementsByClassName(`${form}__name`)[0].classList.remove('error');
-        document.getElementsByClassName(`${form}__tel`)[0].classList.remove('error');
-
-        let isValid = true;
-        if (document.getElementsByClassName(`${form}__name`)[0].value.length < 3){
-            document.getElementsByClassName(`${form}__name`)[0].classList.add('error');
-            isValid = false;
-        };
-        if (document.getElementsByClassName(`${form}__tel`)[0].value.includes('_') || document.getElementsByClassName(`${form}__tel`)[0].value.length === 0){
-            document.getElementsByClassName(`${form}__tel`)[0].classList.add('error');
-            isValid = false;
-        };
-
-        if (!isValid) return;
-    })
-});
-
-//validate
-['contacts', 'head-content', 'popup'].forEach((form) => {
-    document.getElementsByClassName(`${form}__name`)[0].addEventListener('input', () => {
-        document.getElementsByClassName(`${form}__name`)[0].classList.remove('error');
-
-        if (document.getElementsByClassName(`${form}__name`)[0].value.length < 3){
-            document.getElementsByClassName(`${form}__name`)[0].classList.add('error');
-        };
-    })
-});
-['contacts', 'head-content', 'popup'].forEach((form) => {
-    document.getElementsByClassName(`${form}__tel`)[0].addEventListener('input', () => {
-        document.getElementsByClassName(`${form}__tel`)[0].classList.remove('error');
-
-        if (document.getElementsByClassName(`${form}__tel`)[0].value.includes('_') || document.getElementsByClassName(`${form}__tel`)[0].value.length === 0){
-            document.getElementsByClassName(`${form}__tel`)[0].classList.add('error');
-        };
-    })
-});
-
-
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     
-// });
+    //checkbox
+    [...document.getElementsByClassName('checkbox')].forEach((el) => {
+        el.addEventListener('click', () => {
+            el.classList.toggle('checked')
+        })
+    });
 
-//contacts__form
-//head-content__
+    //popup
+    [...document.getElementsByClassName('call-popup')].forEach((el) => {
+        el.addEventListener('click', () => {
+            document.getElementsByClassName('popup')[0].classList.add('popup-visible');
+        });
+    });
+
+    document.getElementsByClassName('form__close')[0].addEventListener('click', () => {
+        document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
+    });
+
+    document.getElementsByClassName('popup')[0].addEventListener('click', () => {
+        document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
+    });
+
+    document.getElementById('popup-form').addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    //thanks
+    document.getElementsByClassName('thanks-popup__close')[0].addEventListener('click', () => {
+        document.getElementsByClassName('thanks-popup')[0].classList.remove('popup-visible');
+    });
+
+    document.getElementsByClassName('thanks-popup')[0].addEventListener('click', () => {
+        document.getElementsByClassName('thanks-popup')[0].classList.remove('popup-visible');
+    });
+
+    document.getElementsByClassName('thanks-popup__content')[0].addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    //select
+    document.getElementById('city-select').addEventListener('click', (e) => {
+        document.getElementsByClassName('header__city-list')[0].classList.toggle('select-show');
+        e.stopPropagation();
+    });
+
+    [...document.getElementsByClassName('header__city-item')].forEach( (el) => {
+        el.addEventListener('click', () => {
+            document.getElementsByClassName('header__city')[0].textContent = el.textContent;
+            document.getElementsByClassName('header__mob-city')[0].textContent = el.textContent;
+        })
+    });
+
+    document.getElementsByTagName('body')[0].addEventListener('click', () => {
+        document.getElementsByClassName('header__city-list')[0].classList.remove('select-show');
+    });
+
+    //input
+    for (const el of document.querySelectorAll("[data-placeholder][data-slots]")) {
+        const pattern = el.getAttribute("data-placeholder"),
+            slots = new Set(el.dataset.slots || "_"),
+            prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
+            first = [...pattern].findIndex(c => slots.has(c)),
+            accept = new RegExp(el.dataset.accept || "\\d", "g"),
+            clean = input => {
+                input = input.match(accept) || [];
+                return Array.from(pattern, c =>
+                    input[0] === c || slots.has(c) ? input.shift() || c : c
+                );
+            },
+            format = () => {
+                const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
+                    i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
+                    return i<0? prev[prev.length-1]: back? prev[i-1] || first: i;
+                });
+                el.value = clean(el.value).join``;
+                el.setSelectionRange(i, j);
+                back = false;
+            };
+        let back = false;
+        el.addEventListener("keydown", (e) => back = e.key === "Backspace");
+        el.addEventListener("input", format);
+        el.addEventListener("focus", format);
+        el.addEventListener("blur", () => el.value === pattern && (el.value=""));
+    };
+
+    //submit
+    ['contacts', 'head-content', 'popup'].forEach((form) => {
+        document.getElementsByClassName(`${form}__submit`)[0].addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementsByClassName(`${form}__name`)[0].classList.remove('error');
+            document.getElementsByClassName(`${form}__tel`)[0].classList.remove('error');
+
+            let isValid = true;
+            if (document.getElementsByClassName(`${form}__name`)[0].value.length < 3){
+                document.getElementsByClassName(`${form}__name`)[0].classList.add('error');
+                isValid = false;
+            };
+            if (document.getElementsByClassName(`${form}__tel`)[0].value.includes('_') || document.getElementsByClassName(`${form}__tel`)[0].value.length === 0){
+                document.getElementsByClassName(`${form}__tel`)[0].classList.add('error');
+                isValid = false;
+            };
+
+            console.log(isValid)
+            if (!isValid) return;
+            document.getElementsByClassName('popup')[0].classList.remove('popup-visible');
+            document.getElementsByClassName('thanks-popup')[0].classList.add('popup-visible');
+        })
+    });
+
+    //validate
+    ['contacts', 'head-content', 'popup'].forEach((form) => {
+        document.getElementsByClassName(`${form}__name`)[0].addEventListener('input', () => {
+            document.getElementsByClassName(`${form}__name`)[0].classList.remove('error');
+
+            if (document.getElementsByClassName(`${form}__name`)[0].value.length < 3){
+                document.getElementsByClassName(`${form}__name`)[0].classList.add('error');
+            };
+        })
+    });
+    ['contacts', 'head-content', 'popup'].forEach((form) => {
+        document.getElementsByClassName(`${form}__tel`)[0].addEventListener('input', () => {
+            document.getElementsByClassName(`${form}__tel`)[0].classList.remove('error');
+
+            if (document.getElementsByClassName(`${form}__tel`)[0].value.includes('_') || document.getElementsByClassName(`${form}__tel`)[0].value.length === 0){
+                document.getElementsByClassName(`${form}__tel`)[0].classList.add('error');
+            };
+        })
+    });
+ 
+});
