@@ -7,6 +7,8 @@
         color: #002B42
         & span
             color: $primary
+    &__mob-title
+        display: none
     &__list
         position: relative
     &__curve
@@ -64,3 +66,9 @@
             max-width: none
     .row-reverse .equipment__img
         margin: auto
+@media screen and (max-width: 600px)
+    .equipment
+        &__title
+            display: none
+        &__mob-title
+            display: block
