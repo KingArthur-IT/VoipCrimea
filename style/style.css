@@ -378,7 +378,7 @@
 .header__mob-city {
   display: none;
   position: absolute;
-  right: 32px;
+  right: 40px;
 }
 
 .header__city-list {
@@ -515,6 +515,7 @@
   }
   .header__mob-city {
     font-size: 12px;
+    right: 25px;
   }
   .header__city-list {
     font-size: 12px;
