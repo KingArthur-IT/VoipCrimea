@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isValid) return;
             closePopup('popup');
             
-            postData('http://k095pa95.ru/getnumbers/webhook.php', { name: name, phone: phone })
+            postData('https://k095pa95.ru/getnumbers/webhook.php', { name: name, phone: phone })
                 .then((data) => {
                     showPopup('thanks-popup');
                     console.log(data);
