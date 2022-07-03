@@ -1,7 +1,14 @@
 .head-wrapper
+    position: relative
     width: 100%
-    background: url('../assets/header-bg.webp') no-repeat
-    background-size: 100% 100%
+    overflow: hidden
+    &__bg
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        z-index: -1
+        width: 100%
 .header
     width: 100%
     position: relative
@@ -11,14 +18,13 @@
     &__hero
         display: flex
         justify-content: space-between
-        align-items: center
+        align-items: center 
         margin-bottom: 11px
     &__city-select
         position: relative
         display: flex
         align-items: center
         cursor: pointer
-        flex-basis: 35%
         font-family: 'Montserrat'
         font-style: normal
         font-weight: 400
@@ -71,6 +77,8 @@
         letter-spacing: -0.02em
         color: $text-color
         margin-right: 11px
+        display: flex
+        align-items: center
         & span
             font-weight: 500
             font-size: 24px
@@ -89,12 +97,10 @@
     .head-wrapper
         background-size: auto auto
         background-position-x: center
-@media screen and (max-width: 1020px)
-    .header
-        &__call-link
-            display: none
-        &__city-select
-            flex-basis: 25% !important
+        &__bg
+            right: auto
+            width: auto
+
 @media screen and (max-width: 860px)
     .header
         padding-bottom: 8px
@@ -105,8 +111,8 @@
         &__mob-city
             display: block
             font-size: 14px
-        &__city-select
-            flex-basis: 5% !important
+        &__call-link
+            flex-direction: row-reverse
         &__btn
             display: none
         &__burger
@@ -114,6 +120,23 @@
         &__city-list
             right: 0px
             left: auto
+        &__call-wrapper
+            flex-basis: 25%
+    .head-wrapper
+        &__bg
+            top: 0
+            left: -600px
+@media screen and (max-width: 775px)
+    .header
+        &__call-link
+            font-size: 14px
+            & span
+                font-size: 16px
+@media screen and (max-width: 550px)
+    .header
+        &__logo
+            width: 100px
+            height: 60px
 @media screen and (max-width: 480px)
     .header
         padding-top: 20px
@@ -131,4 +154,13 @@
         &__city-item
             padding: 10px
             min-width: 100px
-            
+        &__call-link
+            font-size: 12px
+            & span
+                font-size: 14px
+@media screen and (max-width: 350px) 
+    .header
+        &__call-link
+            font-size: 10px
+            & span
+                font-size: 12px

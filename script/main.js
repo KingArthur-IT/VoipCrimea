@@ -44,21 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementsByClassName('thanks-popup__content')[0].addEventListener('click', (e) => { e.stopPropagation(); });
 
     //select
-    document.getElementById('city-select').addEventListener('click', (e) => {
-        document.getElementsByClassName('header__city-list')[0].classList.toggle('select-show');
-        e.stopPropagation();
-    });
+    // document.getElementById('city-select').addEventListener('click', (e) => {
+    //     document.getElementsByClassName('header__city-list')[0].classList.toggle('select-show');
+    //     e.stopPropagation();
+    // });
 
-    [...document.getElementsByClassName('header__city-item')].forEach( (el) => {
-        el.addEventListener('click', () => {
-            document.getElementsByClassName('header__city')[0].textContent = el.textContent;
-            document.getElementsByClassName('header__mob-city')[0].textContent = el.textContent;
-        })
-    });
+    // [...document.getElementsByClassName('header__city-item')].forEach( (el) => {
+    //     el.addEventListener('click', () => {
+    //         document.getElementsByClassName('header__city')[0].textContent = el.textContent;
+    //         document.getElementsByClassName('header__mob-city')[0].textContent = el.textContent;
+    //     })
+    // });
 
-    document.getElementsByTagName('body')[0].addEventListener('click', () => {
-        document.getElementsByClassName('header__city-list')[0].classList.remove('select-show');
-    });
+    // document.getElementsByTagName('body')[0].addEventListener('click', () => {
+    //     document.getElementsByClassName('header__city-list')[0].classList.remove('select-show');
+    // });
 
     //input
     for (const el of document.querySelectorAll("[data-placeholder][data-slots]")) {

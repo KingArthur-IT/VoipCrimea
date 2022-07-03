@@ -366,9 +366,18 @@
 }
 
 .head-wrapper {
+  position: relative;
   width: 100%;
-  background: url("../assets/header-bg.webp") no-repeat;
-  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.head-wrapper__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
 }
 
 .header {
@@ -401,8 +410,6 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  -ms-flex-preferred-size: 35%;
-      flex-basis: 35%;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
@@ -483,6 +490,12 @@
   letter-spacing: -0.02em;
   color: #3A3A3C;
   margin-right: 11px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__call-link span {
@@ -510,15 +523,9 @@
     background-size: auto auto;
     background-position-x: center;
   }
-}
-
-@media screen and (max-width: 1020px) {
-  .header__call-link {
-    display: none;
-  }
-  .header__city-select {
-    -ms-flex-preferred-size: 25% !important;
-        flex-basis: 25% !important;
+  .head-wrapper__bg {
+    right: auto;
+    width: auto;
   }
 }
 
@@ -539,9 +546,11 @@
     display: block;
     font-size: 14px;
   }
-  .header__city-select {
-    -ms-flex-preferred-size: 5% !important;
-        flex-basis: 5% !important;
+  .header__call-link {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
   .header__btn {
     display: none;
@@ -552,6 +561,30 @@
   .header__city-list {
     right: 0px;
     left: auto;
+  }
+  .header__call-wrapper {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+  }
+  .head-wrapper__bg {
+    top: 0;
+    left: -600px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .header__call-link {
+    font-size: 14px;
+  }
+  .header__call-link span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__logo {
+    width: 100px;
+    height: 60px;
   }
 }
 
@@ -577,6 +610,21 @@
   .header__city-item {
     padding: 10px;
     min-width: 100px;
+  }
+  .header__call-link {
+    font-size: 12px;
+  }
+  .header__call-link span {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .header__call-link {
+    font-size: 10px;
+  }
+  .header__call-link span {
+    font-size: 12px;
   }
 }
 
