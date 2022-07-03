@@ -586,6 +586,10 @@
     width: 100px;
     height: 60px;
   }
+  .header__call-wrapper {
+    -ms-flex-preferred-size: 33%;
+        flex-basis: 33%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -619,12 +623,16 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   .header__call-link {
     font-size: 10px;
   }
   .header__call-link span {
     font-size: 12px;
+  }
+  .header__call-wrapper {
+    -ms-flex-preferred-size: 28%;
+        flex-basis: 28%;
   }
 }
 
